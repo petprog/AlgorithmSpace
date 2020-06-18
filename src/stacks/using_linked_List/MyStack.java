@@ -28,7 +28,14 @@ public class MyStack {
     }
 
     public void push(int value) {
-        top = new MySinglyLinkedNode(value, top);
+        MySinglyLinkedNode newNode = new MySinglyLinkedNode(value);
+        if(this.length == 0) {
+            this.top = newNode;
+            bottom = newNode;
+        } else {
+            top = new MySinglyLinkedNode(value, top);
+        }
+
         length++;
     }
 
@@ -39,7 +46,7 @@ public class MyStack {
             length--;
             return nodeToRemove.getValue();
         } else {
-            bottom.setNext(null);
+            bottom = null;
             throw new EmptyStackException();
         }
 
@@ -48,6 +55,7 @@ public class MyStack {
     public void printStack() {
         if (top == null) {
             System.out.println("Empty");
+            System.out.println("--------------------------");
             return;
         }
         MySinglyLinkedNode currentNode = top;
@@ -77,6 +85,10 @@ public class MyStack {
         System.out.println("peek: " + stack.peek());
         stack.printStack();
         System.out.println("pop: " + stack.pop());
+        stack.printStack();
+        stack.push(3);
+        stack.printStack();
+        stack.push(4);
         stack.printStack();
 
     }

@@ -9,7 +9,8 @@ public class MySinglyLinkedNode {
     private int value;
     private MySinglyLinkedNode next;
 
-    public MySinglyLinkedNode() {
+    public MySinglyLinkedNode(int value) {
+        this.value = value;
         next = null;
     }
 
