@@ -1,0 +1,36 @@
+/**
+ * Created by Taiwo Farinu on 18-Jun-20
+ */
+
+package stacks.using_linked_List;
+
+public class MySinglyLinkedNode {
+
+    private int value;
+    private MySinglyLinkedNode next;
+
+    public MySinglyLinkedNode() {
+        next = null;
+    }
+
+    public MySinglyLinkedNode(int value, MySinglyLinkedNode next) {
+        this.value = value;
+        this.next = next;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public MySinglyLinkedNode getNext() {
+        return next;
+    }
+
+    public void setNext(MySinglyLinkedNode next) {
+        this.next = next;
+    }
+}
